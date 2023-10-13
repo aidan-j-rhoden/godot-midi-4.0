@@ -7,13 +7,13 @@ public partial class EditorPlugin {
 
 	public override void _enter_tree()
 	{
-		import_plugin = preload("midi_import_plugin.cs").new()
-		add_import_plugin(import_plugin)
+		import_plugin = ResourceLoader.Load("midi_import_plugin.cs").new();
+		GD.add_import_plugin(import_plugin);
 	}
 
 	public override void _exit_tree()
 	{
-		remove_import_plugin(import_plugin)
-		import_plugin = null
+		GD.remove_import_plugin(import_plugin);
+		import_plugin = null;
 	}
 }
